@@ -1,0 +1,641 @@
+/* ======== RESETEO Y BASE ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* ======== HEADER ======== */
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.header nav button {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.header nav button:hover {
+    color: #1abc9c;
+}
+
+/* ======== HOME ======== */
+.home {
+    min-height: 100vh;
+    padding: 50px 20px;
+    text-align: center;
+    background: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30") no-repeat center center/cover;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.home-content {
+    background: rgba(255, 255, 255, 0.15); /* más transparente */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin-bottom: 30px;
+    color: white; /* 👈 texto blanco */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* 👈 sombra elegante */
+}
+
+.home-content h2,
+.home-content p {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Títulos dentro de la bienvenida */
+.home-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.home .highlight {
+    color: #007bff;
+}
+
+.home p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* ======== CAROUSEL ======== */
+
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin: 20px auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-item h4,
+.carousel-item p {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-item .clickable:hover h4 {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.carousel-item button.btn-add {
+    margin-top: 10px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-item button.btn-add:hover {
+    background: #16a085;
+}
+
+.carousel-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 4px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.carousel-buttons button.active {
+    background: #007bff;
+}
+
+
+/* ======== PRODUCTOS ======== */
+.product-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30") 
+    no-repeat center center/cover; /* 👈 imagen de fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.product-card button {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product-card button:hover {
+    background: #16a085;
+}
+
+/* ======== CARRITO ======== */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    display: none;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+/* Sidebar del carrito */
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 20px;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Oculto por defecto */
+    z-index: 999;
+    color: white;
+    /* text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); */
+}
+
+.cart.open {
+    transform: translateX(0); /* Cuando está abierto */
+}
+
+/* Cabecera */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.cart-header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Item del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.cart-item p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+    color: #f1f1f1;
+}
+
+/* Botones de cantidad */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.qty-controls button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.qty-controls button:hover {
+    background: #0056b3;
+}
+
+/* Botón eliminar */
+.remove-btn {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+}
+
+/* Total */
+.cart-total {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Botón vaciar carrito */
+.clear-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #ff6600;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clear-btn:hover {
+    background: #cc5200;
+}
+
+/* ======== OVERLAY ======== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+
+
+/* ======== FOOTER ======== */
+/* ======== LAYOUT GENERAL ======== */
+html, body {
+    height: 100%; /* para que el body ocupe toda la altura */
+}
+
+.app-container {
+    min-height: 100vh;             /* ocupa toda la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* empuja el footer hacia abajo */
+}
+
+/* ======== FOOTER ======== */
+.footer {
+    background: #2c3e50;        
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.95rem;
+    position: relative;  /* se queda en flujo normal */
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #16a085;
+    text-decoration: underline;
+}
+
+.footer .socials {
+    margin-top: 10px;
+}
+
+.footer .socials a {
+    font-size: 1.2rem;
+    margin: 0 8px;
+    color: #ecf0f1;
+    transition: color 0.3s;
+}
+
+.footer .socials a:hover {
+    color: #1abc9c;
+}
+
+/* Mensajes de estado */
+.status {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 40px;
+    color: #333;
+}
+
+.status.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Categoría en productos */
+.product-card .category {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* ======== SOBRE NOSOTROS ======== */
+.about-page {
+    position: relative;
+    background: url('/images/about-bg.jpg') no-repeat center/cover; /* cambia la ruta */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Overlay para oscurecer el fondo */
+.about-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* capa oscura encima de la imagen */
+    z-index: 1;
+}
+
+
+.about {
+    min-height: 100vh;
+    padding: 50px 20px;
+    background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") 
+    no-repeat center center/cover; /* 👈 imagen de fondo corporativa */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1); /* caja transparente */
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px); /* difuminado elegante */
+}
+
+.about-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #ffcc00; /* amarillo dorado */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtítulos */
+.about-container h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: #4da6ff; /* azul suave */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Párrafos */
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0.8rem 0;
+    color: #f2f2f2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about ul li {
+    margin: 6px 0;
+    color: #333;
+}
+
+/* ======== CONTACTO ======== */
+.contact {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216")
+    no-repeat center center/cover;
+}
+
+.contact-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #0f759e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #17769b;
+}
+
+.status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
